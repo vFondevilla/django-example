@@ -54,6 +54,6 @@ jobs:
       - name: Deploy
         run: |
           curl -X POST https://api.github.com/repos/lessthanthreetech/cheerfy-terraform/dispatches \
-          -H 'Accept: application/vnd.github.everest-preview+json' \
-          -H 'Authorization: ${{ secrets.PAT }}' \
-          --data '{"event_type": "beta", "client_payload": { "commit": "head" } }}'
+          -H 'Accept: application/vnd.github+json' \
+          -H 'Authorization: Bearer ${{ secrets.PAT }}' \
+          --data '{"event_type": "beta", "client_payload": { "commit": "head" }}'
